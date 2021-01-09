@@ -1,0 +1,587 @@
+/*-------------------
+VARIABLES
+-------------------*/
+$primaryColor: rgb(255, 166, 0);
+$secColor: rgb(2, 136, 2);
+
+$inactivePrimCol:  rgb(197, 128, 0);
+$inactiveNavCol: grey;
+
+$opacBtnBack: rgba(34, 34, 34, .5);
+
+$textColor: rgb(34, 34, 34);
+$btnTextCol: rgb(0, 231, 0);
+
+$titleFont:'Special Elite', cursive;
+$textFont:'Didact Gothic', sans-serif;
+
+/*-------------------
+MIXINS
+-------------------*/
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin flexAround($direction) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin flexBetween($direction) {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: $direction;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $textFont;
+    color: $primaryColor;
+}
+
+body{
+    background-image: url('../img/bodyBackground.jpg');
+    background-color: $secColor;
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position-y: 30%;
+}
+
+.homeBg {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-image: url('../img/homeBackground.jpg');
+    background-color: $secColor;
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position-y: 30%;
+
+    .homeContainer{
+            @include flexAround(row);
+            padding-top: 20%;
+
+            a{
+                margin: 1vh;
+                text-decoration: none;
+                border-radius: 10rem;
+
+                svg:hover{
+                    fill:orange;
+                }
+            }
+    }
+
+    .circles{
+        width: 100vw;
+        height: 30vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        position: relative;
+        bottom: 55vh;
+        left: -5vw;
+        z-index: 0;
+        
+        div{
+            width: 5px;
+            height: 5px;
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 0 10px white;
+
+            animation: lightballs 15s linear infinite;
+        }
+
+        div:nth-child(1){
+            width: 10px;
+            height: 10px;
+            animation-delay: 1s;
+        }
+        div:nth-child(2){
+            width: 5px;
+            height: 5px;
+            animation-delay: 5s;
+        }
+        div:nth-child(3){
+            width: 7px;
+            height: 7px;
+            animation-delay: 7s;
+        }
+        div:nth-child(4){
+            width: 6px;
+            height: 6px;
+            animation-delay: 10s;
+        }
+        div:nth-child(5){
+            width: 5px;
+            height: 5px;
+            animation-delay: 2s;
+        }
+        div:nth-child(6){
+            width: 8px;
+            height: 8px;
+            animation-delay: 11s;
+        }
+        div:nth-child(7){
+            width: 6px;
+            height:6px;
+            animation-delay: 4s;
+        }
+        div:nth-child(8){
+            width: 9px;
+            height: 9px;
+            animation-delay: 3s;
+        }
+         div:nth-child(9){
+            width: 5px;
+            height: 5px;
+            animation-delay: 6s;
+        }
+        
+    }
+}
+
+.homeLogo{
+    @include flexCenter(row);
+    background-color: rgba(34, 34, 34, .6);
+    border-bottom: 1px solid $primaryColor;
+    padding: 3px;
+
+    h1{
+        color: $primaryColor;
+        margin-top: 2%;
+        font-family: $titleFont;
+        font-size: 2rem;
+    }
+}
+
+.headerSection{
+
+    .navigation{
+        background-color:rgba(34, 34, 34, .6) ;
+
+        ul{
+            @include flexCenter(row);
+            list-style: none;
+            border-bottom: 1px solid $primaryColor;
+
+            #active{
+                color: $primaryColor;
+            }
+
+            a{
+                padding: .3rem;
+                text-decoration: none;
+                color: $inactiveNavCol;
+
+                li{
+                    svg:hover{
+                        fill: orange;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.gridWrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    grid-auto-rows: minmax(100px, auto);
+    color: $primaryColor;
+    width: 100%;
+    justify-content: center;
+    margin-top: 5%;
+
+    .skillCard{
+        background-color: rgba(58, 58, 58, 0.8) ;
+        text-align: center;
+        border: 1px solid $primaryColor;
+
+        .underline{
+            border: 1px solid $primaryColor;
+        }
+
+        .progressBar{
+            border: 1px solid $primaryColor;
+            height: 10px;
+            width: 70%;
+            margin: 5px auto;
+
+            .progressFilledJS{
+                height: 100%;
+                width: 80%;
+                background-color: $inactivePrimCol;
+                box-shadow: 0 0 5px $primaryColor;
+            }
+
+            .progressFilledNode{
+                height: 100%;
+                width: 50%;
+                background-color: $inactivePrimCol;
+                box-shadow: 0 0 5px $primaryColor;
+            }
+
+            .progressFilledCSS{
+                height: 100%;
+                width: 70%;
+                background-color: $inactivePrimCol;
+                box-shadow: 0 0 5px $primaryColor;
+            }
+
+            .progressFilledDB{
+                height: 100%;
+                width: 50%;
+                background-color: $inactivePrimCol;
+                box-shadow: 0 0 5px $primaryColor;
+            }
+
+            .progressFilledJava{
+                height: 100%;
+                width: 40%;
+                background-color: $inactivePrimCol;
+                box-shadow: 0 0 5px $primaryColor;
+            }
+
+            .progressFilledOther{
+                height: 100%;
+                width: 20%;
+                background-color: $inactivePrimCol;
+                box-shadow: 0 0 5px $primaryColor;
+            }
+        }
+
+        h3{
+            font-family: $titleFont;
+            border-bottom: $inactivePrimCol;
+            padding: 1px;
+        }
+        
+        ul{
+            margin: 10px 10px;
+            list-style: url('../img/listItems.svg');
+
+            li{
+                padding: 3px;
+            }
+        }
+    } 
+}
+
+.cardOne {
+    transform-style: preserve-3d;
+    width: 15vw;
+    min-height: 40vh;
+    border: 2px solid $inactivePrimCol;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(255, 42, 42, .2), 0px 0px 50px rgba(255, 42, 42, .2);
+    background-color: rgba(2, 139, 2, .3);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    li{
+        list-style: none;
+        font-family: 'Special Elite', cursive;
+        text-align: center;
+    }
+
+    a{
+        cursor: pointer;
+        font-weight: bolder;
+        text-decoration: none;
+        color: $btnTextCol;
+        border: 2px solid $secColor;
+        border-radius: 1rem;
+        background-color: $opacBtnBack;
+        padding: 5px;
+
+        &:hover{
+            box-shadow: 0 0 10px $primaryColor;
+        }
+    }
+    
+}
+
+.container{
+    width: 25vw;
+    display: flex;
+    justify-content: center;
+    color: $primaryColor;
+}
+
+.cardOne .circle{
+    width: 8rem;
+    height: 8rem;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 235, 12, 0.75),
+        rgba(230, 130, 0, 0.75)  
+    );
+    position: absolute;
+    border-radius:50% ;
+    box-shadow: 0 0px 10px rgba(255, 42, 42, .75);
+    z-index: 1;
+}
+
+.gameNav{
+    @include flexCenter(row);
+    margin-top: 10%;
+}
+
+.cardImg{
+    z-index: 2;
+}
+
+.rock-paper-scissors{
+    height: 100vh;
+    overflow: hidden;
+
+    div.fadeOut{
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    div.fadeIn{
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .startscreen{
+        @include flexCenter(column);
+        height: 100vh;
+
+        button{
+            color: $btnTextCol;
+            font-weight: bold;
+            background-color: $opacBtnBack;
+            border: 2px solid $secColor;
+            border-radius: 1rem;
+            padding: 4px;
+            margin: 5px 0;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: 0 0 10px $primaryColor;
+            }
+        }
+
+        h1{
+            font-family: $titleFont;
+            text-shadow: 0 0 3px $primaryColor;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+    }
+
+    .game{
+        position: relative;
+        top: -100vh;
+        .score{
+            @include flexAround(row);
+    
+            a{
+               text-decoration: none;
+               color: $btnTextCol;
+               border: 2px solid $secColor; 
+               background-color: $opacBtnBack;
+               border-radius: 1rem;
+               padding: 4px;
+               font-weight: bold;
+    
+               &:hover {
+                   box-shadow: 0 0 10px $primaryColor;
+               }
+            }
+    
+            .playerScore, .npcScore{
+                @include flexCenter(column);
+                margin-top: 5vh;
+
+                h2{
+                    font-family: $titleFont;
+                }
+    
+                p{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        .winner{
+            @include flexCenter(row);
+            font-size: 2rem;
+            font-family: $titleFont;
+            margin-top: 5vh;
+        }
+
+        .chars{
+            @include flexAround(row);
+            margin-top: 5vh;
+
+            img{
+                border-radius: 1rem;
+                border: 2px solid $secColor;
+                cursor: pointer;
+
+                &:hover{
+                    box-shadow: 0 0 10px $primaryColor;
+                }
+            }
+        }
+
+        .choices{
+            @include flexAround(row);
+            margin-top: 10vh;
+
+            .theChoices{
+                @include flexCenter(column);
+
+                h3{
+                    font-family: $titleFont;
+                }
+
+                p{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    
+    }
+}
+
+.displayTetris{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    @include flexBetween(row);
+
+    h1{
+        font-family: $titleFont;
+    }
+
+    .sidebar{
+        @include flexAround(column);
+        background-color: $opacBtnBack;
+        padding: 1rem;
+        height: 100vh;
+        border-right: 1px solid $primaryColor;
+
+        .score, .level{
+            p{
+                text-align: center;
+                font-size: 1.2rem
+            }
+        }
+    }
+
+    a{
+        text-decoration: none;
+        border: 2px solid $secColor;
+        border-radius: 1rem;
+        padding: 3px;
+
+        &:hover{
+            box-shadow: 0 0 5px $primaryColor;
+        }
+    }
+
+    .game{
+        position: relative;
+        right: 40vw;
+        top: 10vh;
+
+        .tetrisCanvas{
+            border: 2px solid $primaryColor;
+
+            canvas{
+                opacity: .8;
+            }
+        }
+    }
+}
+
+ .snakecontainer{
+     @include flexBetween(row);
+     overflow: hidden;
+
+     .sidebar{
+         height: 100vh;
+         background-color: $opacBtnBack;
+         border-right: 1px solid $primaryColor;
+         text-align: center;
+         padding: 5px;
+
+         .snakeTitle{
+             font-family: $titleFont;
+             margin-top: 5vh;
+             margin-bottom: 10vh;
+         }
+
+         .snakeScore, .score{
+             font-family: $textFont;  
+         }
+
+         .score{
+            margin-bottom: 10vh; 
+         }
+     }
+
+     a{
+        text-decoration: none;
+        border: 2px solid $secColor;
+        border-radius: 1rem;
+        padding: 3px;
+
+        &:hover{
+            box-shadow: 0 0 5px $primaryColor;
+        }
+    }
+
+    .gameCanvas{
+        position: relative;
+        right: 30vw;
+        top: 10vh;
+
+        .canvas{
+            border: 2px solid $primaryColor;
+            opacity: .8;
+        }
+    }
+ }   
+
+ @keyframes lightballs{
+     0%{
+         transform: translate(0vw);
+         opacity: 0;
+     }
+     25%{
+        
+        opacity: .25;
+    }
+     50%{
+        
+        opacity: .5;
+    }
+    70%{
+        
+        opacity: .25;
+    }
+    100%{
+        transform: translate(100vw);
+        opacity: 0;
+    }
+ }

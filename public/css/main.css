@@ -1,0 +1,583 @@
+/*-------------------
+VARIABLES
+-------------------*/
+/*-------------------
+MIXINS
+-------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Didact Gothic", sans-serif;
+  color: #ffa600;
+}
+
+body {
+  background-image: url("../img/bodyBackground.jpg");
+  background-color: #028802;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position-y: 30%;
+}
+
+.homeBg {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-image: url("../img/homeBackground.jpg");
+  background-color: #028802;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position-y: 30%;
+}
+
+.homeBg .homeContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  padding-top: 20%;
+}
+
+.homeBg .homeContainer a {
+  margin: 1vh;
+  text-decoration: none;
+  border-radius: 10rem;
+}
+
+.homeBg .homeContainer a svg:hover {
+  fill: orange;
+}
+
+.homeBg .circles {
+  width: 100vw;
+  height: 30vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  position: relative;
+  bottom: 55vh;
+  left: -5vw;
+  z-index: 0;
+}
+
+.homeBg .circles div {
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px white;
+  animation: lightballs 15s linear infinite;
+}
+
+.homeBg .circles div:nth-child(1) {
+  width: 10px;
+  height: 10px;
+  animation-delay: 1s;
+}
+
+.homeBg .circles div:nth-child(2) {
+  width: 5px;
+  height: 5px;
+  animation-delay: 5s;
+}
+
+.homeBg .circles div:nth-child(3) {
+  width: 7px;
+  height: 7px;
+  animation-delay: 7s;
+}
+
+.homeBg .circles div:nth-child(4) {
+  width: 6px;
+  height: 6px;
+  animation-delay: 10s;
+}
+
+.homeBg .circles div:nth-child(5) {
+  width: 5px;
+  height: 5px;
+  animation-delay: 2s;
+}
+
+.homeBg .circles div:nth-child(6) {
+  width: 8px;
+  height: 8px;
+  animation-delay: 11s;
+}
+
+.homeBg .circles div:nth-child(7) {
+  width: 6px;
+  height: 6px;
+  animation-delay: 4s;
+}
+
+.homeBg .circles div:nth-child(8) {
+  width: 9px;
+  height: 9px;
+  animation-delay: 3s;
+}
+
+.homeBg .circles div:nth-child(9) {
+  width: 5px;
+  height: 5px;
+  animation-delay: 6s;
+}
+
+.homeLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: rgba(34, 34, 34, 0.6);
+  border-bottom: 1px solid #ffa600;
+  padding: 3px;
+}
+
+.homeLogo h1 {
+  color: #ffa600;
+  margin-top: 2%;
+  font-family: "Special Elite", cursive;
+  font-size: 2rem;
+}
+
+.headerSection .navigation {
+  background-color: rgba(34, 34, 34, 0.6);
+}
+
+.headerSection .navigation ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  list-style: none;
+  border-bottom: 1px solid #ffa600;
+}
+
+.headerSection .navigation ul #active {
+  color: #ffa600;
+}
+
+.headerSection .navigation ul a {
+  padding: .3rem;
+  text-decoration: none;
+  color: grey;
+}
+
+.headerSection .navigation ul a li svg:hover {
+  fill: orange;
+}
+
+.gridWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  grid-auto-rows: minmax(100px, auto);
+  color: #ffa600;
+  width: 100%;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.gridWrapper .skillCard {
+  background-color: rgba(58, 58, 58, 0.8);
+  text-align: center;
+  border: 1px solid #ffa600;
+}
+
+.gridWrapper .skillCard .underline {
+  border: 1px solid #ffa600;
+}
+
+.gridWrapper .skillCard .progressBar {
+  border: 1px solid #ffa600;
+  height: 10px;
+  width: 70%;
+  margin: 5px auto;
+}
+
+.gridWrapper .skillCard .progressBar .progressFilledJS {
+  height: 100%;
+  width: 80%;
+  background-color: #c58000;
+  box-shadow: 0 0 5px #ffa600;
+}
+
+.gridWrapper .skillCard .progressBar .progressFilledNode {
+  height: 100%;
+  width: 50%;
+  background-color: #c58000;
+  box-shadow: 0 0 5px #ffa600;
+}
+
+.gridWrapper .skillCard .progressBar .progressFilledCSS {
+  height: 100%;
+  width: 70%;
+  background-color: #c58000;
+  box-shadow: 0 0 5px #ffa600;
+}
+
+.gridWrapper .skillCard .progressBar .progressFilledDB {
+  height: 100%;
+  width: 50%;
+  background-color: #c58000;
+  box-shadow: 0 0 5px #ffa600;
+}
+
+.gridWrapper .skillCard .progressBar .progressFilledJava {
+  height: 100%;
+  width: 40%;
+  background-color: #c58000;
+  box-shadow: 0 0 5px #ffa600;
+}
+
+.gridWrapper .skillCard .progressBar .progressFilledOther {
+  height: 100%;
+  width: 20%;
+  background-color: #c58000;
+  box-shadow: 0 0 5px #ffa600;
+}
+
+.gridWrapper .skillCard h3 {
+  font-family: "Special Elite", cursive;
+  border-bottom: #c58000;
+  padding: 1px;
+}
+
+.gridWrapper .skillCard ul {
+  margin: 10px 10px;
+  list-style: url("../img/listItems.svg");
+}
+
+.gridWrapper .skillCard ul li {
+  padding: 3px;
+}
+
+.cardOne {
+  transform-style: preserve-3d;
+  width: 15vw;
+  min-height: 40vh;
+  border: 2px solid #c58000;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgba(255, 42, 42, 0.2), 0px 0px 50px rgba(255, 42, 42, 0.2);
+  background-color: rgba(2, 139, 2, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cardOne li {
+  list-style: none;
+  font-family: 'Special Elite', cursive;
+  text-align: center;
+}
+
+.cardOne a {
+  cursor: pointer;
+  font-weight: bolder;
+  text-decoration: none;
+  color: #00e700;
+  border: 2px solid #028802;
+  border-radius: 1rem;
+  background-color: rgba(34, 34, 34, 0.5);
+  padding: 5px;
+}
+
+.cardOne a:hover {
+  box-shadow: 0 0 10px #ffa600;
+}
+
+.container {
+  width: 25vw;
+  display: flex;
+  justify-content: center;
+  color: #ffa600;
+}
+
+.cardOne .circle {
+  width: 8rem;
+  height: 8rem;
+  background: linear-gradient(to bottom, rgba(0, 235, 12, 0.75), rgba(230, 130, 0, 0.75));
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0px 10px rgba(255, 42, 42, 0.75);
+  z-index: 1;
+}
+
+.gameNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 10%;
+}
+
+.cardImg {
+  z-index: 2;
+}
+
+.rock-paper-scissors {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.rock-paper-scissors div.fadeOut {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.rock-paper-scissors div.fadeIn {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.rock-paper-scissors .startscreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.rock-paper-scissors .startscreen button {
+  color: #00e700;
+  font-weight: bold;
+  background-color: rgba(34, 34, 34, 0.5);
+  border: 2px solid #028802;
+  border-radius: 1rem;
+  padding: 4px;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.rock-paper-scissors .startscreen button:hover {
+  box-shadow: 0 0 10px #ffa600;
+}
+
+.rock-paper-scissors .startscreen h1 {
+  font-family: "Special Elite", cursive;
+  text-shadow: 0 0 3px #ffa600;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.rock-paper-scissors .game {
+  position: relative;
+  top: -100vh;
+}
+
+.rock-paper-scissors .game .score {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+
+.rock-paper-scissors .game .score a {
+  text-decoration: none;
+  color: #00e700;
+  border: 2px solid #028802;
+  background-color: rgba(34, 34, 34, 0.5);
+  border-radius: 1rem;
+  padding: 4px;
+  font-weight: bold;
+}
+
+.rock-paper-scissors .game .score a:hover {
+  box-shadow: 0 0 10px #ffa600;
+}
+
+.rock-paper-scissors .game .score .playerScore, .rock-paper-scissors .game .score .npcScore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5vh;
+}
+
+.rock-paper-scissors .game .score .playerScore h2, .rock-paper-scissors .game .score .npcScore h2 {
+  font-family: "Special Elite", cursive;
+}
+
+.rock-paper-scissors .game .score .playerScore p, .rock-paper-scissors .game .score .npcScore p {
+  font-size: 1.5rem;
+}
+
+.rock-paper-scissors .game .winner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-size: 2rem;
+  font-family: "Special Elite", cursive;
+  margin-top: 5vh;
+}
+
+.rock-paper-scissors .game .chars {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 5vh;
+}
+
+.rock-paper-scissors .game .chars img {
+  border-radius: 1rem;
+  border: 2px solid #028802;
+  cursor: pointer;
+}
+
+.rock-paper-scissors .game .chars img:hover {
+  box-shadow: 0 0 10px #ffa600;
+}
+
+.rock-paper-scissors .game .choices {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 10vh;
+}
+
+.rock-paper-scissors .game .choices .theChoices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.rock-paper-scissors .game .choices .theChoices h3 {
+  font-family: "Special Elite", cursive;
+}
+
+.rock-paper-scissors .game .choices .theChoices p {
+  font-size: 1.5rem;
+}
+
+.displayTetris {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.displayTetris h1 {
+  font-family: "Special Elite", cursive;
+}
+
+.displayTetris .sidebar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(34, 34, 34, 0.5);
+  padding: 1rem;
+  height: 100vh;
+  border-right: 1px solid #ffa600;
+}
+
+.displayTetris .sidebar .score p, .displayTetris .sidebar .level p {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.displayTetris a {
+  text-decoration: none;
+  border: 2px solid #028802;
+  border-radius: 1rem;
+  padding: 3px;
+}
+
+.displayTetris a:hover {
+  box-shadow: 0 0 5px #ffa600;
+}
+
+.displayTetris .game {
+  position: relative;
+  right: 40vw;
+  top: 10vh;
+}
+
+.displayTetris .game .tetrisCanvas {
+  border: 2px solid #ffa600;
+}
+
+.displayTetris .game .tetrisCanvas canvas {
+  opacity: .8;
+}
+
+.snakecontainer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.snakecontainer .sidebar {
+  height: 100vh;
+  background-color: rgba(34, 34, 34, 0.5);
+  border-right: 1px solid #ffa600;
+  text-align: center;
+  padding: 5px;
+}
+
+.snakecontainer .sidebar .snakeTitle {
+  font-family: "Special Elite", cursive;
+  margin-top: 5vh;
+  margin-bottom: 10vh;
+}
+
+.snakecontainer .sidebar .snakeScore, .snakecontainer .sidebar .score {
+  font-family: "Didact Gothic", sans-serif;
+}
+
+.snakecontainer .sidebar .score {
+  margin-bottom: 10vh;
+}
+
+.snakecontainer a {
+  text-decoration: none;
+  border: 2px solid #028802;
+  border-radius: 1rem;
+  padding: 3px;
+}
+
+.snakecontainer a:hover {
+  box-shadow: 0 0 5px #ffa600;
+}
+
+.snakecontainer .gameCanvas {
+  position: relative;
+  right: 30vw;
+  top: 10vh;
+}
+
+.snakecontainer .gameCanvas .canvas {
+  border: 2px solid #ffa600;
+  opacity: .8;
+}
+
+@keyframes lightballs {
+  0% {
+    transform: translate(0vw);
+    opacity: 0;
+  }
+  25% {
+    opacity: .25;
+  }
+  50% {
+    opacity: .5;
+  }
+  70% {
+    opacity: .25;
+  }
+  100% {
+    transform: translate(100vw);
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=main.css.map */
